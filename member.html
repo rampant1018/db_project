@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CKBike - Member</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -15,6 +16,30 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="dist/js/bootstrap.min.js"></script>
+
+	<script>
+		function getMemberList() {
+			$.ajax({
+				type: "GET",
+				url: "get_member_list.php",
+				async: false,
+				cache: false,
+				success: function(data) {
+					var data = JSON.parse(data)
+					$.each(data, function(i, elem) {
+						var id = "<td>" + elem.id + "</td>";
+						var name = "<td>" + elem.name + "</td>";
+						var role = "<td>" + elem.role + "</td>";
+						var phone = "<td>" + elem.phone + "</td>";
+						var row = "<tr>" + id + name + role + phone + "</tr>";
+						$("#member_list").append(row);
+					});
+				}
+			});
+		}
+
+		$(document).ready(getMemberList);
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
@@ -38,10 +63,7 @@
 			<thead>
 				<tr><th>ID</th><th>Name</th><th>Role</th><th>Phone</th></tr>
 			</thead>
-			<tbody>
-				<tr><td>1</td><td>Jeff</td><td>Student</td><td>0912-123456</td></tr>
-				<tr><td>2</td><td>Andy</td><td>Teacher</td><td>06-2223123</td></tr>
-				<tr><td>3</td><td>Anny</td><td>Guest</td><td>0932-456123</td></tr>
+			<tbody id="member_list">
 			</tbody>
 		</table>
 	</div>
