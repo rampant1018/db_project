@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CKBike - Bike</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -15,6 +16,32 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="dist/js/bootstrap.min.js"></script>
+
+	<script>
+		function getBikeList() {
+			$.ajax({
+				type: "GET",
+				url: "get_bike_list.php",
+				async: false,
+				cache: false,
+				success: function(data) {
+					var data = JSON.parse(data)
+					$.each(data, function(i, elem) {
+						var id = "<td>" + elem.id + "</td>";
+						var date_buy = "<td>" + elem.date_buy + "</td>";
+						var money_buy = "<td>" + elem.money_buy + "</td>";
+						var brand = "<td>" + elem.brand + "</td>";
+						var status = "<td>" + elem.status + "</td>";
+						var category = "<td>" + elem.category + "</td>";
+						var row = "<tr>" + id + date_buy + money_buy + brand + status + category + "</tr>";
+						$("#bike_list").append(row);
+					});
+				}
+			});
+		}
+
+		$(document).ready(getBikeList);
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
@@ -36,9 +63,9 @@
 	<div class="container">
 		<table class="table">
 			<thead>
-				<tr><th>ID</th><th>Name</th><th>Role</th><th>Phone</th></tr>
+				<tr><th>ID</th><th>Bought Date</th><th>Bought Price</th><th>Brand</th><th>Status</th><th>Category</th></tr>
 			</thead>
-			<tbody>
+			<tbody id="bike_list">
 			</tbody>
 		</table>
 	</div>
