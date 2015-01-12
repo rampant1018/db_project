@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CKBike - Station</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -15,9 +16,16 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="dist/js/bootstrap.min.js"></script>
+
+	<!-- Load my javascript -->
+	<script src="my.js"></script>
+
+	<script>
+		$(document).ready(getStationList);
+	</script>
 </head>
-<body>
-	<nav class="navbar navbar-default" role="navigation">
+<body style="padding-top: 70px;">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">CKBike</a>
 		</div>
@@ -36,9 +44,9 @@
 	<div class="container">
 		<table class="table">
 			<thead>
-				<tr><th>ID</th><th>Name</th><th>Role</th><th>Phone</th></tr>
+				<tr><th>ID</th><th>Broken Slot</th><th>Current Slot</th><th>All Slot</th><th>Location</th></tr>
 			</thead>
-			<tbody>
+			<tbody id="station_list">
 			</tbody>
 		</table>
 	</div>
