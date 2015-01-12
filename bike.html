@@ -17,34 +17,15 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="dist/js/bootstrap.min.js"></script>
 
-	<script>
-		function getBikeList() {
-			$.ajax({
-				type: "GET",
-				url: "get_bike_list.php",
-				async: false,
-				cache: false,
-				success: function(data) {
-					var data = JSON.parse(data)
-					$.each(data, function(i, elem) {
-						var id = "<td>" + elem.id + "</td>";
-						var date_buy = "<td>" + elem.date_buy + "</td>";
-						var money_buy = "<td>" + elem.money_buy + "</td>";
-						var brand = "<td>" + elem.brand + "</td>";
-						var status = "<td>" + elem.status + "</td>";
-						var category = "<td>" + elem.category + "</td>";
-						var row = "<tr>" + id + date_buy + money_buy + brand + status + category + "</tr>";
-						$("#bike_list").append(row);
-					});
-				}
-			});
-		}
+	<!-- Load my javascript -->
+	<script src="my.js"></script>
 
+	<script>
 		$(document).ready(getBikeList);
 	</script>
 </head>
-<body>
-	<nav class="navbar navbar-default" role="navigation">
+<body style="padding-top: 70px;">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">CKBike</a>
 		</div>
