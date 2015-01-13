@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CKBike - Bike Repair</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -15,6 +16,13 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="dist/js/bootstrap.min.js"></script>
+
+	<!-- Load my javascript -->
+	<script src="my.js"></script>
+
+	<script>
+		$(document).ready(getBikeRepairList);
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
@@ -38,7 +46,7 @@
 			<thead>
 				<tr><th>Bike ID</th><th>Fixer ID</th><th>Item</th><th>Money</th><th>Date</th></tr>
 			</thead>
-			<tbody>
+			<tbody id="bikeRepair_list">
 			</tbody>
 		</table>
 	</div>

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CKBike - Rent</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -15,6 +16,13 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="dist/js/bootstrap.min.js"></script>
+
+	<!-- Load my javascript -->
+	<script src="my.js"></script>
+
+	<script>
+		$(document).ready(getRentList);
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
@@ -36,13 +44,9 @@
 	<div class="container">
 		<table class="table">
 			<thead>
-<<<<<<< HEAD
-				<tr><th>ID</th><th>Name</th><th>Role</th><th>Phone</th></tr>
-=======
 				<tr><th>Member ID</th><th>Bike ID</th><th>Station ID(borrow)</th><th>Station ID(return)</th><th>Time(borrow)</th><th>Time(return)</th></tr>
->>>>>>> FETCH_HEAD
 			</thead>
-			<tbody>
+			<tbody id="rent_list">
 			</tbody>
 		</table>
 	</div>

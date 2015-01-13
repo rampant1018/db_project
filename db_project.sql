@@ -1,8 +1,4 @@
-<<<<<<< HEAD
--- phpMyAdmin SQL Dump
-=======
 ﻿-- phpMyAdmin SQL Dump
->>>>>>> FETCH_HEAD
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
@@ -47,17 +43,14 @@ CREATE TABLE IF NOT EXISTS `bike` (
 --
 
 CREATE TABLE IF NOT EXISTS `bike_rent` (
+  `id` int(11) NOT NULL,
   `member_id` varchar(9) NOT NULL,
   `bike_id` int(11) NOT NULL,
   `station_id_borrow` int(11) NOT NULL,
   `station_id_return` int(11) NOT NULL,
   `time_borrow` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `time_return` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`member_id`,`bike_id`,`station_id_borrow`,`station_id_return`),
-  UNIQUE KEY `time_borrow` (`time_borrow`,`time_return`),
-  KEY `bike_id` (`bike_id`),
-  KEY `station_id_borrow` (`station_id_borrow`),
-  KEY `station_id_return` (`station_id_return`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -67,18 +60,13 @@ CREATE TABLE IF NOT EXISTS `bike_rent` (
 --
 
 CREATE TABLE IF NOT EXISTS `bike_repair` (
+  `id` int(11) not NULL,
   `bike_id` int(11) NOT NULL,
   `fixer_id` int(11) NOT NULL,
-<<<<<<< HEAD
-  `item` varchar(16) NOT NULL,
-=======
   `Item` varchar(16) NOT NULL,
->>>>>>> FETCH_HEAD
   `money` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
-  PRIMARY KEY (`bike_id`,`fixer_id`),
-  KEY `bike_id` (`bike_id`),
-  KEY `fixer_id` (`fixer_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -129,19 +117,14 @@ CREATE TABLE IF NOT EXISTS `station` (
 --
 
 CREATE TABLE IF NOT EXISTS `station_reapir` (
+  `id` int(11) NOT NULL,
   `station_id` int(11) NOT NULL,
   `fixer_id` int(11) NOT NULL,
   `slot_number` int(11) NOT NULL,
-<<<<<<< HEAD
-  `item` varchar(16) NOT NULL,
-=======
   `Item` varchar(16) NOT NULL,
->>>>>>> FETCH_HEAD
   `money` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
-  PRIMARY KEY (`station_id`,`fixer_id`),
-  KEY `fixer_id` (`fixer_id`),
-  KEY `station_id` (`station_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

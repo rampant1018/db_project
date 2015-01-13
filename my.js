@@ -78,8 +78,6 @@ function getStationList() {
 		}
 	});
 }
-<<<<<<< HEAD
-=======
 
 function getRentList() {
 	$.ajax({
@@ -145,4 +143,3 @@ function getStationRepairList() {
 		}
 	});
 }
->>>>>>> FETCH_HEAD
