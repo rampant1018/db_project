@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 -- phpMyAdmin SQL Dump
+=======
+﻿-- phpMyAdmin SQL Dump
+>>>>>>> FETCH_HEAD
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
@@ -65,7 +69,11 @@ CREATE TABLE IF NOT EXISTS `bike_rent` (
 CREATE TABLE IF NOT EXISTS `bike_repair` (
   `bike_id` int(11) NOT NULL,
   `fixer_id` int(11) NOT NULL,
+<<<<<<< HEAD
   `item` varchar(16) NOT NULL,
+=======
+  `Item` varchar(16) NOT NULL,
+>>>>>>> FETCH_HEAD
   `money` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`bike_id`,`fixer_id`),
@@ -124,7 +132,11 @@ CREATE TABLE IF NOT EXISTS `station_reapir` (
   `station_id` int(11) NOT NULL,
   `fixer_id` int(11) NOT NULL,
   `slot_number` int(11) NOT NULL,
+<<<<<<< HEAD
   `item` varchar(16) NOT NULL,
+=======
+  `Item` varchar(16) NOT NULL,
+>>>>>>> FETCH_HEAD
   `money` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`station_id`,`fixer_id`),
