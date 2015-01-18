@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CKBike - Station</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
+
+	<!-- jqeury script -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="dist/js/bootstrap.min.js"></script>
+
+	<!-- Load my javascript -->
+	<script src="my.js"></script>
+
+	<script>
+		$(document).ready(getStationList);
+	</script>
+</head>
+<body style="padding-top: 70px;">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">CKBike</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="member.html">Member</a></li>
+				<li><a href="bike.html">Bike</a></li>
+				<li><a href="fixer.html">Fixer</a></li>
+				<li class="active"><a href="#">Station</a></li>
+				<li><a href="bike_repair.html">Bike Repair</a></li>
+				<li><a href="station_repair.html">Station Repair</a></li>
+				<li><a href="rent.html">Rent Record</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr><th>ID</th><th>Broken Slot</th><th>Current Slot</th><th>All Slot</th><th>Location</th></tr>
+			</thead>
+			<tbody id="station_list">
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
